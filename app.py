@@ -10,17 +10,16 @@ st.set_page_config(
 )
 
 st.title("TinyEdge Chat 🤖")
-st.markdown("A lightweight, edge-capable Chatbot powered by TinyLlama.")
+st.markdown("A lightweight, edge-capable Chatbot powered by SmolLM.")
 
 # --- Model Loading (Cached) ---
 @st.cache_resource
 def load_model():
-    """Loads the TinyLlama model pipeline. Cached to prevent reloading on every interaction."""
+    """Loads the SmolLM model pipeline. Cached to prevent reloading on every interaction."""
     # Using pipeline for simplicity. We use text-generation pipeline.
-    # TinyLlama is small enough to run on CPU with bfloat16 or just float32.
     pipe = pipeline(
         "text-generation", 
-        model="TinyLlama/TinyLlama-1.1B-Chat-v1.0", 
+        model="HuggingFaceTB/SmolLM-135M-Instruct", 
         torch_dtype=torch.bfloat16, 
         device_map="auto"
     )
