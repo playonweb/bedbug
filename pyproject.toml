@@ -8,6 +8,7 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "accelerate",
     "streamlit>=1.61.1",
     "torch>=2.13.0",
     "transformers",
