@@ -1,0 +1,10 @@
+version: '3'
+
+tasks:
+  dev:
+    desc: Run the Streamlit application locally
+    cmd: uv run streamlit run app.py
+
+  sync:
+    desc: Sync dependencies using uv
+    cmd: uv sync

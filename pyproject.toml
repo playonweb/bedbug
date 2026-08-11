@@ -1,0 +1,24 @@
+[project]
+name = "bedbug"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "rahuldhole", email = "rdhole95@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "opencv-python-headless>=5.0.0.93",
+    "pandas>=3.0.5",
+    "pillow>=12.3.0",
+    "streamlit>=1.61.1",
+    "torch>=2.13.0",
+    "ultralytics>=8.4.117",
+]
+
+[project.scripts]
+bedbug = "bedbug:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
