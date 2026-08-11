@@ -1,9 +1,19 @@
 version: '3'
 
 tasks:
+  setup:
+    desc: Setup environment and fix OpenCV headless conflict
+    cmd: uv sync && uv pip uninstall opencv-python opencv-python-headless && uv pip install opencv-python-headless
+    sources:
+      - pyproject.toml
+      - uv.lock
+    generates:
+      - .venv/lib/python3.14/site-packages/cv2/__init__.py
+
   dev:
     desc: Run the Streamlit application locally
-    cmd: uv run streamlit run app.py
+    deps: [setup]
+    cmd: uv run --no-sync streamlit run app.py
 
   sync:
     desc: Sync dependencies using uv
